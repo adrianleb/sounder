@@ -1,0 +1,24 @@
+.playlist
+  position absolute
+  left 0
+  top 0
+  height 100%
+  width 10rem
+  background-color lighten(black, 80%)
+  box-shadow inset -2px 0 1rem rgba(black, 0.5)
+  -webkit-transition all 0.25s ease-out 0.01s
+  -webkit-transform translate3d(-9rem,0,0)
+  .opener
+    width 2rem
+    height 6rem
+    background-color lighten(black, 80%)
+    display block
+    position absolute
+    right 0
+    top 50%
+    margin-top -3rem
+    margin-right -2rem
+    box-shadow inset -2px 0 1rem rgba(white, 0.5)
+
+.playlist.open
+  -webkit-transform translate3d(0,0,0)
