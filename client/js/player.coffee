@@ -1,11 +1,5 @@
-window.Player = 
-  audioPlayers: []
-  currentPlaying: null
-  isPlaying: false
-  currentTrack: 0
+class Player
 
-  init: ->
-    @initEvents()
 
   initEvents: (el) ->
     $(@).on 'newAudio', (e, el) =>
@@ -21,12 +15,22 @@ window.Player =
         @currentTrack = index
         @playIndex
 
+
+  constructor: ->
+    @audioPlayers = []
+    @currentPlaying = null
+    @isPlaying = false
+    @currentTrack = 0
+    console.log @
+    @initEvents()
+    @
+
   renderPlaylist: ->
     $('#playlist').html ''
     for player in @audioPlayers
       do (player) =>
         index = @audioPlayers.indexOf player
-        tmpl = "<a class='play' data-index='#{index}' href='#'>track-#{index}</a><br/>"
+        tmpl = "<a class='play' data-index='#{index}' href='#'>track-#{index}</a>"
         $('#playlist').append tmpl
 
   pauseCurrent: ->

@@ -1,10 +1,10 @@
 Meteor.startup ->
   $ ->
-    Sounder.init()
-    Player.init()
+    window.sounder = new Sounder
+    # Player.init()
     Renderer.init()
 
     _.delay (=>
-      Sounder.plugMany()
+      sounder.plugMany()
       console.log 'ready'
       ), 20

@@ -3,38 +3,37 @@
 </head>
 
 <body>
+  <canvas id="myCanvas" resize></canvas>
+  <audio id="source" src="danny.mp3" ></audio>
+  <audio id="source2" src="todd.mp3"></audio> 
   {{> hello}}
+  {{>controls}}
 </body>
 
 <template name="hello">
-  <h1>Prepare your Eyes</h1>
-  <div class="shaders">
+<!--   <div class="shaders">
     <a href="#" data-shader="solid">solid</a>
     <a href="#" data-shader="gradient">gradient</a>
     <a href="#" data-shader="radial">radial</a>
     <a href="#" data-shader="zoom">zoom</a>
     <!-- <a href="#" data-shader="solid">solid</a> -->
-  </div>
-  <div id="playlistWrap" class="playlist">
-    <div id="playlist" class="list"></div>
-    <a href="#" class="opener" id="playlistOpener">o</a>
-  </div>
-  <div class="drop_area">
-    <label for="url">StreamUrl</label>
-    <input type="url" name="url" id="urlfield">
-    <button id="url">catchit!</button>
-  </div>
-  <div class="player">
-  <audio id="source" src="danny.mp3" ></audio>
-   <audio id="source2" src="todd.mp3"></audio> 
-    <div class="volume">
-       <input id="volume" type="range" min="0" max="1" step="0.1" value="0.5"/>
+  <!-- </div> --> 
+  
+
+</template>
+
+
+<template name="controls">
+  <div id="controlsWrap" class="controls open">
+    <a href="#" class="opener" id="controlsOpener">o</a>
+
+    <div id="playlist" class="playlist"></div>
+
+    <div class="inputter" id="inputWrap">
+      <label for="urlfield">Stream URL</label><input type="url" name="url" id="urlfield"><button id="url">catchit!</button>
     </div>
-    <div class="progress">
-      <progress id="progBar" value="0" max="100">
-    </div>
-    <button id="play" class="play">play</a>
-    <button id="play2" class="pause">play2</a>
-<!--   <canvas id="canvas"></canvas> -->
+    <a href="#" class="inputOpener" id="inputOpener">SourceUrl</a>
   </div>
+
+
 </template>
