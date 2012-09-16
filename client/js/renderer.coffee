@@ -146,8 +146,8 @@ window.Renderer =
       while i < (@BARS - 1)
         # magnitude = value[ Math.round((@BARS  - i) * (value.length / @BARS - 2)) ] * 2
         # magnitude = value[Math.round(i * 8.3)] * 2
-        magnitude = value[Math.round((i * 8.3))] * 2
-        @path.segments[i].point.y = (@TOTALHEIGHT) - magnitude
+        magnitude = value[Math.round(i * 8.5)] * 2.3
+        @path.segments[(@path.segments.length - 1) - i].point.y = (@TOTALHEIGHT) - magnitude
         i += 1
 
       @path.fillColor = "hsla(#{ 255 - (value[@OFFSET] % 255)},30%,80%, 0.1)"
